@@ -1,4 +1,4 @@
-boolean-array
+Boolean Array
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -17,18 +17,36 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'validate.io-boolean-array' );
+var isBooleanArray = require( 'validate.io-boolean-array' );
 ```
 
-#### foo( value )
+#### isBooleanArray( value )
 
-What does this function do?
+Validates if a `value` is a `boolean array`.
+
+``` javascript
+var value = [true,false,true];
+
+var bool = isBooleanArray( value );
+// returns true
+```
+
+__Note__: the method will return `false` for an empty `array`.
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'validate.io-boolean-array' );
+var isBooleanArray = require( 'validate.io-boolean-array' );
+
+console.log( isBooleanArray( [true,false,true] ) );
+// returns true
+
+console.log( isBooleanArray( [] ) );
+// returns false
+
+console.log( isBooleanArray( [true,1,false] ) );
+// returns false
 ```
 
 To run the example code from the top-level application directory,
